@@ -2,6 +2,7 @@
 
 library(dplyr)
 library(ggplot2)
+library(profvis)
 
 data(economics, package="ggplot2")
 
@@ -41,12 +42,14 @@ optim(par=c(0.5), calc_sse, method="SANN", control = list(maxit=5000))
 
 profvis(
   {
-    optim(par=c(0.5), calc_sse, method="SANN", control = list(maxit=100))
+    optim(par=c(0.5), calc_sse, method="SANN", control = list(maxit=1000))
   },
   interval = 0.005
 )
 
 simpleLoess
 ?simpleLoess
+??simpleLoess
 
+stats:::simpleLoess
 
