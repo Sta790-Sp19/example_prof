@@ -1,6 +1,8 @@
 suppressMessages( library(spBayes) )
+library(profvis)
 
 site_data = readRDS("data.rds")
+
 
 lm = spLM(
   pm25 ~ 1, data = site_data, coords = cbind(x=site_data$day, y=0),
@@ -12,3 +14,4 @@ lm = spLM(
   amcmc = list(n.batch = 1000, batch.length = 50, accept.rate = 0.43),
   verbose = TRUE
 )
+
