@@ -12,7 +12,7 @@ lm = spLM(
   priors   = list(beta.Norm = list(0,1000), phi.Unif = c(sqrt(3)/30-1e-6, sqrt(3)/30+1e-6),
                   sigma.sq.IG = c(2, 2), tau.sq.IG = c(2, 0.1)),
   cov.model = "gaussian",
-  amcmc = list(n.batch = 1000, batch.length = 50, accept.rate = 0.43),
+  amcmc = list(n.batch = 300, batch.length = 50, accept.rate = 0.43),
   verbose = TRUE
 )
 
