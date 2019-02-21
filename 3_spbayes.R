@@ -1,5 +1,6 @@
 suppressMessages( library(spBayes) )
-library(profvis)
+RhpcBLASctl::blas_set_num_threads(1)
+
 
 site_data = readRDS("data.rds")
 
